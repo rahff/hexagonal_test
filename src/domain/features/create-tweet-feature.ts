@@ -1,4 +1,4 @@
-import { Repository } from "../../infra/interfaces/repositories";
+import { Repository } from "../ports/repositories";
 import { Tweet } from "../models/tweet";
 import { Tweetos } from "../models/tweetos";
 import { CreateTweet } from "../use-cases/create-tweet";

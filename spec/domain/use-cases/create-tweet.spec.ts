@@ -1,9 +1,9 @@
 import { Tweet } from "../../../src/domain/models/tweet"
 import { Tweetos } from "../../../src/domain/models/tweetos";
 import { CreateTweet } from "../../../src/domain/use-cases/create-tweet";
-import { TweetRepository } from "../../../src/infra/database/repositories/inMemory/tweet-repository"
-import { TweetosRepository } from "../../../src/infra/database/repositories/inMemory/tweetos-repository";
-import { Repository } from "../../../src/infra/interfaces/repositories"
+import { TweetRepository } from "../../../src/infra/adapters/database/repositories/inMemory/tweet-repository"
+import { TweetosRepository } from "../../../src/infra/adapters/database/repositories/inMemory/tweetos-repository";
+import { Repository } from "../../../src/domain/ports/repositories"
 import { FakeTweetos } from "../../infra/database/data";
 
 describe('CreateTweetRequest', ()=>{

@@ -4,7 +4,7 @@ import { TweetController } from "../../../src/infra/controller/tweet-controller"
 import { createApplication, startServer } from "../../../src/infra/www/functions";
 import { createTweetTask } from "../../stubs"
 import { agent } from 'supertest'
-import { ICreateTweetRequestDto } from "../../../src/infra/interfaces/dtos";
+import { ICreateTweetRequestDto } from "../../../src/domain/ports/dtos";
 
 
 describe('Tweet Controller', ()=>{

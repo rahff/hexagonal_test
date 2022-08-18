@@ -14,6 +14,5 @@ export class CreateTweetRequestDto {
         } catch (error) {
             throw new Error("invalid CreateTweetRequestDto");
         }
-
     }
 }

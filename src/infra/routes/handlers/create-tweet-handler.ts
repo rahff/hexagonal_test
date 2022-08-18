@@ -1,11 +1,12 @@
 import { CreateTweetFeature } from "../../../domain/features/create-tweet-feature";
 import { TweetController } from "../../controller/tweet-controller";
-import { tweetRepositoryInMemoInstance } from "../../database/repositories/inMemory/tweet-repository";
-import { tweetosRepositoryInMemoInstance } from "../../database/repositories/inMemory/tweetos-repository";
+import { tweetRepositoryInMemoInstance } from "../../adapters/database/repositories/inMemory/tweet-repository";
+import { tweetosRepositoryInMemoInstance } from "../../adapters/database/repositories/inMemory/tweetos-repository";
 import { Request, Response } from "express";
+import { ICreateTweetRequestDto } from "../../../domain/ports/dtos";
 
 export const createTweethandler = async (req: Request, res: Response)=> {
-    const body = req.body;
+    const body: ICreateTweetRequestDto = req.body;
     const feature = CreateTweetFeature(tweetRepositoryInMemoInstance, tweetosRepositoryInMemoInstance)
     const controller = new TweetController(feature)
     try {

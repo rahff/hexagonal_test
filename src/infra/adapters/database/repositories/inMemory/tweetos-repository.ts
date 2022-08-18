@@ -1,5 +1,6 @@
-import { Tweetos } from "../../../../domain/models/tweetos";
-import { Repository } from "../../../interfaces/repositories";
+import { Tweetos } from "../../../../../domain/models/tweetos";
+import { Repository } from "../../../../../domain/ports/repositories";
+
 
 export class TweetosRepository implements Repository<Tweetos> {
 

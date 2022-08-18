@@ -1,9 +1,9 @@
-import { CreateTweetRequestDto } from "../../infra/interfaces/dtos";
-import { Repository } from "../../infra/interfaces/repositories";
+import { CreateTweetRequestDto } from "../ports/dtos";
+import { Repository } from "../ports/repositories";
 import { Tweet } from "../models/tweet";
 import { Tweetos } from "../models/tweetos";
 import {v4 as uuid} from 'uuid';
-import { Task } from "../../infra/interfaces/api";
+import { Task } from "../ports/api";
 
 export class CreateTweet implements Task<Tweet>{
 
