@@ -1,8 +1,6 @@
-import express, { Application, Router } from "express";
+import express, { Application } from "express";
 import { Server } from "http";
-import { features } from "process";
 import { helloWorldController } from "../controller/hello-world.controller";
-import { Task } from "../../domain/ports/api";
 import router from "../routes"
 
 

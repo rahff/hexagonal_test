@@ -1,24 +1,23 @@
 export class Tweetos {
-    
-    constructor(private id: string, private email: string, private username: string,  private avatar: string, private followers: Tweetos[]){}
+     id: string;  
+     email: string;  
+     username: string;   
+     avatar: string;  
+     followers: string[];
 
-    public getEmail(){
-        return this.email;
+    constructor( id: string,  email: string,  username: string,   avatar: string,  followers: string[]){
+        try {
+            this.id = id;
+            this.email = this.emailGuard(email);
+            this.username = username;
+            this.avatar = avatar;
+            this.followers = followers;
+        } catch (error) {
+            throw error;
+        }
     }
-    
-    public getAvatar(){
-        return this.avatar;
-    } 
-     
-    public getFollowers(){
-        return this.followers;
-    } 
-     
-    public getUsername(){
-        return this.username;
-    }   
-    
-    public getId(){
-        return this.id;
-    }     
+
+    private emailGuard(email: string): string {
+        return email;
+    }
 }

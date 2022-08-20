@@ -3,6 +3,8 @@ import { Tweetos } from "../../../src/domain/models/tweetos"
 
 describe('Comment', ()=>{
     
+    beforeAll(()=> console.log("\nComment Domain Model"))
+
     it('should create', ()=>{
         const tweetos: Tweetos = new Tweetos("123", "email123@gamil.com", "Elon Musk", "", [])
         const comment = new Comment(tweetos, "a simple comment");

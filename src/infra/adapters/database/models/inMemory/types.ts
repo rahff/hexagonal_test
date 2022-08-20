@@ -1,0 +1,1 @@
+export type FilterQuery<T> = {[P in keyof T as string]?: any}

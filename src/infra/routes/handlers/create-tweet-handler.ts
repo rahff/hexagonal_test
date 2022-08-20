@@ -1,22 +1,20 @@
-import { CreateTweetFeature } from "../../../domain/features/create-tweet-feature";
-import { TweetController } from "../../controller/tweet-controller";
+import { CreateTweetFeature } from "../../injectors/create-tweet-feature";
+import { createtweetController } from "../../controller/tweet-controller";
 import { tweetRepositoryInMemoInstance } from "../../adapters/database/repositories/inMemory/tweet-repository";
 import { tweetosRepositoryInMemoInstance } from "../../adapters/database/repositories/inMemory/tweetos-repository";
 import { Request, Response } from "express";
-import { ICreateTweetRequestDto } from "../../../domain/ports/dtos";
+import { ICreateTweetRequestDto } from "../../../domain/ports/in/dtos";
 
-export const createTweethandler = async (req: Request, res: Response)=> {
+
+
+export const createTweetHandler = async (req: Request, res: Response)=> {
     const body: ICreateTweetRequestDto = req.body;
-    const feature = CreateTweetFeature(tweetRepositoryInMemoInstance, tweetosRepositoryInMemoInstance)
-    const controller = new TweetController(feature)
+    const feature = CreateTweetFeature(tweetRepositoryInMemoInstance, tweetosRepositoryInMemoInstance);
     try {
-        const response = await controller.createtweetHandler(body)
-        res.status(201).json({
-            data: response
-        })
+        const response = await createtweetController(feature, body);
+        res.status(201).json({ data: response });
     } catch (error: any) {
-        res.status(400).json({
-            error: error.message
-        })
+        res.status(400).json({ error: error.message });
     }
 }
+
