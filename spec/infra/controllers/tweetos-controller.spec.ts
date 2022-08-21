@@ -2,7 +2,7 @@ import { Application } from "express";
 import { Server } from "http";
 import { agent } from "supertest";
 import { ICreateTweetosRequestDto } from "../../../src/domain/ports/in/dtos";
-import { createApplication, startServer } from "../../../src/infra/www/functions";
+import { createApplication, startServer } from "../../../src/infra/www/bootstrap";
 
 describe('Tweetos Controller integration', ()=>{
     beforeAll(()=> console.log("\n Tweetos Controller integration\n"));

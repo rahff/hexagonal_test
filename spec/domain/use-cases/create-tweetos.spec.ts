@@ -3,8 +3,8 @@ import { FakeTweetos } from "../../infra/database/data";
 import { CreateTweetos } from "../../../src/domain/use-cases/create-tweetos";
 import { CreateTweetosRequestDto } from "../../../src/domain/ports/in/dtos";
 import { createTweetosRequest } from "../../stubs/index"
-import { TweetosModel } from "../../../src/infra/adapters/database/models/inMemory/tweetos.model";
 import { Repository } from "../../../src/domain/ports/out/repositories";
+import { TweetosModel } from "../../../src/infra/adapters/database/models/tweetos.model";
 
 
 describe('CreateTweetosRequest', ()=>{
@@ -21,13 +21,13 @@ describe('CreateTweetosRequest', ()=>{
 
      it('should create a new tweetos', async ()=> {
         const tweetos = await createTweetosFeature.execute(createTweetosRequestDto);
-        const expectedTweetos = await tweetosRepository.findById(tweetos.id);
+        const expectedTweetos = await tweetosRepository.findOneBy({_id: tweetos._id});
         expect(expectedTweetos?.username).toEqual(tweetos.username);
      })
 
      it('should throw an error if the tweetos s email already exist', async ()=> {
         try {
-            const tweetosAlReadyExist = await tweetosRepository.create(FakeTweetos)
+            const tweetosAlReadyExist = await tweetosRepository.save(FakeTweetos)
             const tweetos = await createTweetosFeature.execute(createTweetosRequestDto);
             expect(tweetos).toBeNull();
         } catch (error: any) {

@@ -1,9 +1,17 @@
 import { CreateTweetos } from "../../domain/use-cases/create-tweetos";
-import { TweetosModel } from "../adapters/database/models/inMemory/tweetos.model";
-import { Repository } from "../../domain/ports/out/repositories";
+import { tweetosRepositoryInMemoInstance } from "../adapters/database/repositories/inMemory/tweetos-repository";
+import { tweetosMongoRepository } from "../adapters/database/repositories/prod/tweetos-repository";
 
 
 
-export function CreateTweetosFeature(tweetosRepository: Repository<TweetosModel>): CreateTweetos {
-    return new CreateTweetos(tweetosRepository);
-}
+export function CreateTweetosFeature(): CreateTweetos {
+    switch (process.env.DATASOURCE) {
+       case "inMemory":
+          return new CreateTweetos(tweetosRepositoryInMemoInstance)
+       case "mongoDB":
+          return new CreateTweetos(tweetosMongoRepository)
+       default:
+          return new CreateTweetos(tweetosMongoRepository)
+    }
+ }
+    

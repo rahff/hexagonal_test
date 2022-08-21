@@ -2,7 +2,9 @@ import express, { Application } from "express";
 import { Server } from "http";
 import { helloWorldController } from "../controller/hello-world.controller";
 import router from "../routes"
-
+import { DataSource, EntityManager } from 'typeorm';
+import { TweetModel } from "../adapters/database/models/tweet.model";
+import { TweetosModel } from "../adapters/database/models/tweetos.model";
 
 
 export function createApplication(): Application {
@@ -17,4 +19,7 @@ export function startServer(port: number = 3000, app: Application): Server {
     const server = app.listen(port, ()=> { console.log(`listen on port ${port}`)});
     return server;
 }
+
+
+
 

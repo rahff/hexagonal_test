@@ -13,15 +13,15 @@ describe("Like a Tweet", ()=>{
     })
 
     it('should increase likes of a particular tweet', async ()=>{
-        const tweet = await tweetRepository.create(FakeTweet);
-        const likedTweet = await likeTweetFeature.execute({tweetId: FakeTweet.id});
-        expect(tweet.id).toEqual(likedTweet.id);
+        const tweet = await tweetRepository.save(FakeTweet);
+        const likedTweet = await likeTweetFeature.execute({tweetId: FakeTweet._id});
+        expect(tweet._id).toEqual(likedTweet._id);
         expect(tweet.likes).toBe(1);
     })
 
     it('should throw an error if the tweet does not exist', async ()=> {
         try {
-            const likedTweet = await likeTweetFeature.execute({tweetId: FakeTweet.id});
+            const likedTweet = await likeTweetFeature.execute({tweetId: FakeTweet._id});
             expect(likedTweet).toBeNull();
         } catch (error: any) {
             expect(error.message).toBe("this tweet does not exist");

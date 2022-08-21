@@ -1,6 +1,6 @@
 import { Application } from "express";
 import { Server } from "http";
-import { createApplication, startServer } from "../../../src/infra/www/functions";
+import { createApplication, startServer } from "../../../src/infra/www/bootstrap";
 import { agent } from 'supertest'
 import { ICreateTweetosRequestDto, ICreateTweetRequestDto, LikeTweetRequestDto } from "../../../src/domain/ports/in/dtos";
 import { TweetosRepository } from "../../../src/infra/adapters/database/repositories/inMemory/tweetos-repository";
