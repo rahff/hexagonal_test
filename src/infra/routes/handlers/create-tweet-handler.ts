@@ -1,7 +1,8 @@
 import { CreateTweetFeature } from "../../injectors/create-tweet-feature";
 import { createtweetController } from "../../controller/tweet-controller";
 import { Request, Response } from "express";
-import { ICreateTweetRequestDto } from "../../../domain/ports/in/dtos";
+import { ICreateTweetRequestDto } from "../../../domain/modules/ports/driver/tweet.dto";
+
 
 
 

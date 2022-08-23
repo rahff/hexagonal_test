@@ -2,13 +2,10 @@ import { Application } from "express";
 import { Server } from "http";
 import { createApplication, startServer } from "../../../src/infra/www/bootstrap";
 import { agent } from 'supertest'
-import { ICreateTweetosRequestDto, ICreateTweetRequestDto, LikeTweetRequestDto } from "../../../src/domain/ports/in/dtos";
-import { TweetosRepository } from "../../../src/infra/adapters/database/repositories/inMemory/tweetos-repository";
-import { FakeTweetos } from "../database/data";
-import { Tweetos } from "../../../src/domain/models/tweetos";
+import { ICreateTweetRequestDto, LikeTweetRequestDto } from "../../../src/domain/modules/ports/driver/tweet.dto";
 
 
-describe('Tweet Controller integration', ()=>{
+describe('Tweet Controller integration', ()=> {
 
     beforeAll(()=> console.log("\nTweet Controller integration: \n"));
 
@@ -17,7 +14,8 @@ describe('Tweet Controller integration', ()=>{
     let req = agent(app);
 
     describe("Create Tweet Request", ()=>{
-        console.log("\nCreate Tweet Request");
+        beforeAll(()=> console.log("\nCreate Tweet Request"))
+        
         it("should return an error message because the tweetos does not exist", async ()=> {
             const createTweetRequestDto: ICreateTweetRequestDto = { content: "Hello world", tweetosId: "123" }
             const response = await req.post("/api/tweet").send(createTweetRequestDto);

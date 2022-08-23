@@ -1,9 +1,9 @@
-import { Tweetos } from "../../domain/models/tweetos";
-import { Task } from "../../domain/ports/in/api";
-import { CreateTweetosRequestDto, ICreateTweetosRequestDto } from "../../domain/ports/in/dtos";
+import { CreateTweetosTask } from "../../domain/modules/ports/driver/api";
+import { CreateTweetosRequestDto, ICreateTweetosRequestDto, TweetosDto } from "../../domain/modules/ports/driver/tweetos.dtos";
 
 
-export const createtweetController = async (createTweetosTask: Task<Tweetos>, requestBody: ICreateTweetosRequestDto): Promise<Tweetos> => {
+
+export const createtweetosController = async (createTweetosTask: CreateTweetosTask, requestBody: ICreateTweetosRequestDto): Promise<TweetosDto> => {
     try{          
         const createTweetosRequestDto = new CreateTweetosRequestDto(requestBody);
         const response = await createTweetosTask.execute(createTweetosRequestDto);

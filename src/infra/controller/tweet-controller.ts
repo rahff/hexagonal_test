@@ -1,25 +1,24 @@
-import { Tweet } from "../../domain/models/tweet";
-import { Task } from "../../domain/ports/in/api";
-import { CreateTweetRequestDto, ICreateTweetRequestDto, LikeTweetRequestDto } from "../../domain/ports/in/dtos";
+import { CreateTweetTask, LikeTweetTask } from "../../domain/modules/ports/driver/api";
+import { ICreateTweetRequestDto, CreateTweetRequestDto, LikeTweetRequestDto, TweetDto } from "../../../src/domain/modules/ports/driver/tweet.dto";
 
 
 
-    export const createtweetController = async (tweetTask: Task<Tweet>, requestBody: ICreateTweetRequestDto): Promise<Tweet> => {
-        try{          
-            const createTweetRequestDto = new CreateTweetRequestDto(requestBody);
-            const response = await tweetTask.execute(createTweetRequestDto);
-            return response;
-        }catch(error: any){
-            throw error;        
-        }
+export const createtweetController = async (tweetTask: CreateTweetTask, requestBody: ICreateTweetRequestDto): Promise<TweetDto> => {
+    try{          
+        const createTweetRequestDto = new CreateTweetRequestDto(requestBody);
+        const response = await tweetTask.execute(createTweetRequestDto);
+        return response;
+    }catch(error: any){
+        throw error;        
     }
+}
 
-    export const likeTweetController = async (tweetTask: Task<Tweet>, requestParam: string): Promise<Tweet> => {
-        try {
-            const likeTweetRequest: LikeTweetRequestDto = { tweetId: requestParam };
-            const response = await tweetTask.execute(likeTweetRequest);
-            return response;
-        } catch (error: any) {
-            throw error;
-        }
+export const likeTweetController = async (tweetTask: LikeTweetTask, requestParam: string): Promise<TweetDto> => {
+    try {
+        const likeTweetRequest: LikeTweetRequestDto = { tweetId: requestParam };
+        const response = await tweetTask.execute(likeTweetRequest);
+        return response;
+    } catch (error: any) {
+        throw error;
     }
+}

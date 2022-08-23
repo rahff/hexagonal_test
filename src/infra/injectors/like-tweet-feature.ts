@@ -1,16 +1,19 @@
-import { LikeTweet } from "../../domain/use-cases/like-tweet";
-import { tweetRepositoryInMemoInstance } from "../adapters/database/repositories/inMemory/tweet-repository";
-import { tweetMongoRepository } from "../adapters/database/repositories/prod/tweetrepository";
+import { DataSources } from "../database";
+import { LikeTweet } from "../../domain/modules/like-tweet.module";
+import { LikeTweetDaoAdapter } from "../adapters/dao/like-tweet-dao-adapter";
+import { tweetInMemory } from "../adapters/services/tweet-inMemory";
+import { tweetMongoRepository } from "../adapters/services/tweet-repository";
 
 
 
-export function CreateLikeTweetFeature(): LikeTweet {
+export function LikeTweetFeature(): LikeTweet {
     switch (process.env.DATASOURCE) {
-       case "inMemory":
-          return new LikeTweet(tweetRepositoryInMemoInstance);
-       case "mongoDB":
-          return new LikeTweet(tweetMongoRepository);
-       default:
-          return new LikeTweet(tweetMongoRepository);
+      case DataSources.inMemory:
+         const likeTweetInMemoryDao = new LikeTweetDaoAdapter(tweetInMemory);
+         return new LikeTweet(likeTweetInMemoryDao);
+      case DataSources.mongoDb:
+         const likeTweetMongoDao = new LikeTweetDaoAdapter(tweetMongoRepository)
+         return new LikeTweet(likeTweetMongoDao);
+      default: throw new Error("No data source provided");
     }
  }

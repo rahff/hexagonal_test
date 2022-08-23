@@ -1,3 +1,6 @@
+import { TweetosDto } from "../modules/ports/driver/tweetos.dtos";
+
+
 export class Tweetos {
      _id: string;  
      email: string;  
@@ -14,6 +17,16 @@ export class Tweetos {
             this.followers = followers;
         } catch (error) {
             throw error;
+        }
+    }
+
+    public getTweetosDto(): TweetosDto {
+        return {
+            _id: this._id,  
+            email: this.email,  
+            username: this.username,   
+            avatar: this.avatar,
+            followers: this.followers
         }
     }
 
