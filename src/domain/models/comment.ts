@@ -1,5 +1,5 @@
-import { CommentDto } from "../modules/ports/driver/comment.dto";
-import { TweetosDto } from "../modules/ports/driver/tweetos.dtos";
+import { CommentDto } from "../ports/driver/comment.dto";
+import { TweetosDto } from "../ports/driver/tweetos.dtos";
 
 
 

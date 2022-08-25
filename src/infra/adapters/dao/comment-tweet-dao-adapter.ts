@@ -1,8 +1,8 @@
-import { CommentDto } from "src/domain/modules/ports/driver/comment.dto";
-import { TweetDto } from "src/domain/modules/ports/driver/tweet.dto";
-import { TweetosDto } from "src/domain/modules/ports/driver/tweetos.dtos";
+import { CommentDto } from "src/domain/ports/driver/comment.dto";
+import { TweetDto } from "src/domain/ports/driver/tweet.dto";
+import { TweetosDto } from "src/domain/ports/driver/tweetos.dtos";
 import { MongoInterface } from "src/infra/database";
-import { CommentTweetDao } from "../../../domain/modules/ports/driven/comment-tweet-dao";
+import { CommentTweetDao } from "../../../domain/ports/driven/comment-tweet-dao";
 
 export class CommentTweetDaoAdapter implements CommentTweetDao {
 

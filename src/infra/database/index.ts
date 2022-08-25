@@ -1,7 +1,7 @@
 import * as MDB from "mongodb"
-import { TweetDto } from "src/domain/modules/ports/driver/tweet.dto";
-import { TweetosDto } from "src/domain/modules/ports/driver/tweetos.dtos";
-import { CommentDto } from "src/domain/modules/ports/driver/comment.dto";
+import { TweetDto } from "src/domain/ports/driver/tweet.dto";
+import { TweetosDto } from "src/domain/ports/driver/tweetos.dtos";
+import { CommentDto } from "src/domain/ports/driver/comment.dto";
 
 
 

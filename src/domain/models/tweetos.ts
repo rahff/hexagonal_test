@@ -1,4 +1,4 @@
-import { TweetosDto } from "../modules/ports/driver/tweetos.dtos";
+import { TweetosDto } from "../ports/driver/tweetos.dtos";
 
 
 export class Tweetos {

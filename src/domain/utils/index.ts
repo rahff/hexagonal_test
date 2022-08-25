@@ -4,11 +4,11 @@ export const generateId = (): string => uuid();
 
 export const generateRandom = (): number => Math.floor(Math.random() * 150);
 
-export const generateRanddomString = (length: number): string => {
+export const generateRandomString = (length: number): string => {
     let string: string = "";
     for (let index = 0; index <length; index++) {
         const seq = [generateRandom(), generateRandom(), generateRandom()]
        string += String.fromCharCode(...seq);
     }
-    return string;
+    return string.trim();
 }

@@ -1,17 +1,19 @@
 import { Router } from "express";
-import { commentTweetHandler } from "./handlers/comment-tweet-handler";
-import { createTweetHandler } from "./handlers/create-tweet-handler";
-import { createTweetosHandler } from "./handlers/create-tweetos-handler";
-import { likeTweetHandler } from "./handlers/like-tweet-handler";
+import { commentTweetController } from "../controllers/comment-tweet.controller";
+import { createTweetController } from "../controllers/create-tweet.controller";
+import { createTweetosController } from "../controllers/create-tweetos.controller";
+import { getTweetListController } from "../controllers/get-tweet-list.controller";
+import { likeTweetController } from "../controllers/like-tweet.controller";
 
 
 
 const router = Router()
 
-router.get('/tweet/like/:tweetId', likeTweetHandler)
-router.post('/tweet', createTweetHandler);
-router.post('/tweetos', createTweetosHandler);
-router.post('/comments/add', commentTweetHandler);
+router.get('/tweets', getTweetListController)
+router.get('/tweet/like/:tweetId', likeTweetController)
+router.post('/tweet', createTweetController);
+router.post('/tweetos', createTweetosController);
+router.post('/comments/add', commentTweetController);
 
 
 export default router;

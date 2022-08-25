@@ -1,6 +1,6 @@
 import express, { Application } from "express";
 import { Server } from "http";
-import { helloWorldController } from "../controller/hello-world.controller";
+import { helloWorldController } from "../services/hello-world.service";
 import router from "../routes"
 
 

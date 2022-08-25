@@ -1,11 +1,11 @@
-import { TweetosInMemory } from "../../../src/infra/adapters/services/tweetos-inMemory";
-import { TweetInMemory } from "../../../src/infra/adapters/services/tweet-inMemory"
+import { TweetosInMemory } from "../../../src/infra/adapters/repositories/tweetos-inMemory";
+import { TweetInMemory } from "../../../src/infra/adapters/repositories/tweet-inMemory"
 import { FakeTweetos } from "./data";
-import { ObjectId } from "mongodb";
+
 
 describe('InMemory repositories', ()=>{
 
-    beforeAll(()=> console.log("InMemory repositories\n"));
+    beforeAll(()=> console.log("\nInMemory repositories\n"));
 
     let tweetInMemory: TweetInMemory = new TweetInMemory(); 
     let tweetosInMemory: TweetosInMemory = new TweetosInMemory();

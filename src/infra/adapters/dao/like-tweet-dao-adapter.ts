@@ -1,6 +1,6 @@
-import { TweetDto } from "src/domain/modules/ports/driver/tweet.dto";
+import { TweetDto } from "src/domain/ports/driver/tweet.dto";
 import { MongoInterface } from "src/infra/database";
-import { LikeTweetDao } from "../../../domain/modules/ports/driven/like-tweet-dao";
+import { LikeTweetDao } from "../../../domain/ports/driven/like-tweet-dao";
 
 export class LikeTweetDaoAdapter implements LikeTweetDao {
 

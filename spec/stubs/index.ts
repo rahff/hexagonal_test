@@ -1,9 +1,10 @@
 
-import { CreateTweetosRequestDto } from "../../src/domain/modules/ports/driver/tweetos.dtos";
+import { generateRandom, generateRandomString } from "../../src/domain/utils";
+import { CreateTweetosRequestDto, ICreateTweetosRequestDto } from "../../src/domain/ports/driver/tweetos.dtos";
 
 
 export const createTweetosRequest: CreateTweetosRequestDto = {
     avatar: "",
-    email: "elonmusk@gmail.com",
-    username: "Elon Musk"
+    email: "michoiutest"+generateRandom()+"@gmail.com",
+    username:  generateRandomString(4)+" User"
 }
