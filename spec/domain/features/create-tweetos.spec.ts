@@ -1,10 +1,10 @@
 import { createTweetosRequest } from "../../stubs/index"
-import { CreateTweetos } from "../../../src/domain/features/create-tweetos.feature";
-import { CreateTweetosRequestDto } from "../../../src/domain/ports/driver/tweetos.dtos";
+import { CreateTweetos } from "../../../src/core/features/create-tweetos.feature";
+import { CreateTweetosRequestDto } from "../../../src/core/ports/driver/tweetos.dtos";
 import { DBMongo } from "../../../src/infra/database";
 import { mongoUrl } from "../../infra/database/data";
-import { generateRandom } from "../../../src/domain/utils";
-import { CreateTweetosModule } from "../../../src/domain/modules/createTweetos.module";
+import { generateRandom } from "../../../src/app/utils";
+import { CreateTweetosModule } from "../../../src/app/modules/createTweetos.module";
 import { AMQP } from "../../../src/infra/rmq/amqp";
 import { TweetosRepository } from "../../../src/infra/adapters/repositories/tweetos-repository";
 

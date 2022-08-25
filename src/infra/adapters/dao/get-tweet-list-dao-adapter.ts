@@ -1,6 +1,6 @@
 import { FindCursor, WithId } from "mongodb";
-import { GetTweetListDao } from "src/domain/ports/driven/get-twwet-list-dao";
-import { TweetDto } from "../../../domain/ports/driver/tweet.dto";
+import { GetTweetListDao } from "src/core/ports/driven/get-twwet-list-dao";
+import { TweetDto } from "../../../core/ports/driver/tweet.dto";
 import { MongoInterface } from "../../../infra/database";
 
 export class GetTweetListDaoAdapter implements GetTweetListDao {

@@ -1,8 +1,8 @@
-import { Tweetos } from "../../../domain/models/tweetos";
-import { CreateTweetDao } from "../../../domain/ports/driven/create-tweet-dao";
-import { TweetDto } from "../../../domain/ports/driver/tweet.dto";
+import { Tweetos } from "../../../core/models/tweetos";
+import { CreateTweetDao } from "../../../core/ports/driven/create-tweet-dao";
+import { TweetDto } from "../../../core/ports/driver/tweet.dto";
 import { MongoInterface } from "../../database";
-import { TweetosDto } from "src/domain/ports/driver/tweetos.dtos";
+import { TweetosDto } from "src/core/ports/driver/tweetos.dtos";
 
 
 

@@ -1,5 +1,5 @@
 import { Tweetos } from "../models/tweetos";
-import { generateId } from "../utils";
+import { generateId } from "../../app/utils";
 import { CreateTweetosTask } from "../ports/driver/api";
 import { CreateTweetosRequestDto, TweetosDto } from "../ports/driver/tweetos.dtos";
 import { CreateTweetosDao } from "../ports/driven/create-tweetos-dao";

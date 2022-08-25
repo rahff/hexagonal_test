@@ -1,5 +1,5 @@
-import { Tweet } from "../../../src/domain/models/tweet"
-import { Tweetos } from "../../../src/domain/models/tweetos"
+import { Tweet } from "../../../src/core/models/tweet"
+import { Tweetos } from "../../../src/core/models/tweetos"
 import { FakeTweet, FakeTweetos } from "../../infra/database/data"
 
 describe('Tweet', ()=>{

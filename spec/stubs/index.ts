@@ -1,6 +1,6 @@
 
-import { generateRandom, generateRandomString } from "../../src/domain/utils";
-import { CreateTweetosRequestDto, ICreateTweetosRequestDto } from "../../src/domain/ports/driver/tweetos.dtos";
+import { generateRandom, generateRandomString } from "../../src/app/utils";
+import { CreateTweetosRequestDto, ICreateTweetosRequestDto } from "../../src/core/ports/driver/tweetos.dtos";
 
 
 export const createTweetosRequest: CreateTweetosRequestDto = {

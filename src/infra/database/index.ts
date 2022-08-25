@@ -1,7 +1,7 @@
 import * as MDB from "mongodb"
-import { TweetDto } from "src/domain/ports/driver/tweet.dto";
-import { TweetosDto } from "src/domain/ports/driver/tweetos.dtos";
-import { CommentDto } from "src/domain/ports/driver/comment.dto";
+import { TweetDto } from "src/core/ports/driver/tweet.dto";
+import { TweetosDto } from "src/core/ports/driver/tweetos.dtos";
+import { CommentDto } from "src/core/ports/driver/comment.dto";
 
 
 
@@ -88,4 +88,12 @@ export class DBMongo {
 
 }
 
-export const MongoConnection = new DBMongo("mongodb://localhost:27017", "tweet");
+class DataBaseModule {
+    static register(options: {mongoUrl: string, database: string}): DBMongo {
+        return new DBMongo(options.mongoUrl, options.database);
+    }
+}
+
+export const MongoConnection = DataBaseModule.register({mongoUrl: "mongodb://localhost:27017", database: "tweet"})
+
+

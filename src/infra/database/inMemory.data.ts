@@ -1,5 +1,5 @@
-import { TweetDto } from "../../domain/ports/driver/tweet.dto";
-import { TweetosDto } from "../../domain/ports/driver/tweetos.dtos";
+import { TweetDto } from "../../core/ports/driver/tweet.dto";
+import { TweetosDto } from "../../core/ports/driver/tweetos.dtos";
 
 export const TweetInMemoryDB: TweetDto[] = [
     {_id: "045042303211111111111111", content: "Hello MichMich !", likes: 8, tweetos: {_id: "123456789111111111111111", avatar: "", email: "elonMusk@gmail.com", followers: [], username: "Elon Musk"}},

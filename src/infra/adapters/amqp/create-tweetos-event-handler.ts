@@ -1,7 +1,7 @@
 import { AmqpInterface } from "../../rmq/amqp";
-import { CreateTweetosProducerEvent } from "../../../domain/ports/driven/handlers/create-tweetos-handler";
+import { CreateTweetosProducerEvent } from "../../../core/ports/driven/handlers/create-tweetos-handler";
 import { Channel } from "amqplib";
-import { TweetosDto } from "../../../domain/ports/driver/tweetos.dtos";
+import { TweetosDto } from "../../../core/ports/driver/tweetos.dtos";
 
 
 

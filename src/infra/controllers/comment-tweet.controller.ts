@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { ICommentTweetDto } from "../../domain/ports/driver/comment.dto";
+import { ICommentTweetDto } from "../../core/ports/driver/comment.dto";
 import { commentTweetService } from "../services/comment.service";
-import { CommentTweetModule } from "../../domain/modules/commentTweet.module";
+import { CommentTweetModule } from "../../app/modules/commentTweet.module";
 
 
 

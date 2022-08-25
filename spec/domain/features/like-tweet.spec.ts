@@ -1,5 +1,5 @@
-import { LikeTweetModule } from "../../../src/domain/modules/likeTweet.module";
-import { LikeTweet } from "../../../src/domain/features/like-tweet.feature";
+import { LikeTweetModule } from "../../../src/app/modules/likeTweet.module";
+import { LikeTweet } from "../../../src/core/features/like-tweet.feature";
 import { DBMongo } from "../../../src/infra/database";
 import { mongoUrl, tweetIdRef } from "../../infra/database/data";
 import { TweetRepository } from "../../../src/infra/adapters/repositories/tweet-repository";

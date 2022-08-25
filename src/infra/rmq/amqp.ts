@@ -15,7 +15,7 @@ export class AMQP {
 
     private connection: Connection | null = null;
     private createTweetosChannel: Channel | null = null;
-    
+
     constructor(private amqpUrl: string){}
 
     async init(): Promise<void> {
@@ -52,5 +52,11 @@ export class AMQP {
 
 }
 
+export class AmqpModule {
+    static register(options : {amqpUrl: string}): AMQP {
+        return new AMQP(options.amqpUrl)
+    }
+}
 
-export const amqpInstance = new AMQP("");
+export const amqp: AMQP = AmqpModule.register({amqpUrl: ""});
+

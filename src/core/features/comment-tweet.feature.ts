@@ -2,7 +2,7 @@ import { Comment } from "../models/comment";
 import { CommentTweetTask } from "../ports/driver/api";
 import { CommentTweetDao } from "../ports/driven/comment-tweet-dao";
 import { CommentDto, CommentTweetRequestDto } from "../ports/driver/comment.dto";
-import { generateId } from "../utils";
+import { generateId } from "../../app/utils";
 
 
 

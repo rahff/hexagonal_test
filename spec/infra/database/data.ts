@@ -1,6 +1,6 @@
-import { generateId } from "../../../src/domain/utils";
-import { Tweet } from "../../../src/domain/models/tweet";
-import { Tweetos } from "../../../src/domain/models/tweetos";
+import { generateId } from "../../../src/app/utils";
+import { Tweet } from "../../../src/core/models/tweet";
+import { Tweetos } from "../../../src/core/models/tweetos";
 
 export const FakeTweetos = new Tweetos(generateId(), "email"+123+"@gmail.com", "Elon Musk", "", [])
 export const FakeTweet =  new Tweet(generateId(), "Hello World", FakeTweetos, 0)

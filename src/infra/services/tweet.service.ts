@@ -1,5 +1,5 @@
-import { CreateTweetTask, LikeTweetTask } from "../../domain/ports/driver/api";
-import { ICreateTweetRequestDto, CreateTweetRequestDto, LikeTweetRequestDto, TweetDto } from "../../domain/ports/driver/tweet.dto";
+import { CreateTweetTask, LikeTweetTask } from "../../core/ports/driver/api";
+import { ICreateTweetRequestDto, CreateTweetRequestDto, LikeTweetRequestDto, TweetDto } from "../../core/ports/driver/tweet.dto";
 
 
 

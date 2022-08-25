@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { LikeTweetModule } from "../../domain/modules/likeTweet.module";
+import { LikeTweetModule } from "../../app/modules/likeTweet.module";
 import { likeTweetService } from "../services/tweet.service";
 
 

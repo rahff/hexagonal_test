@@ -1,6 +1,6 @@
-import { TweetosDto } from "../../../domain/ports/driver/tweetos.dtos";
+import { TweetosDto } from "../../../core/ports/driver/tweetos.dtos";
 import { MongoInterface } from "../../../infra/database";
-import { CreateTweetosDao } from "../../../domain/ports/driven/create-tweetos-dao";
+import { CreateTweetosDao } from "../../../core/ports/driven/create-tweetos-dao";
 
 export class CreatTweetosDaoAdapter implements CreateTweetosDao {
 

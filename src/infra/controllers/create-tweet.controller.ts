@@ -1,7 +1,7 @@
 import { createTweetService } from "../services/tweet.service";
 import { Request, Response } from "express";
-import { ICreateTweetRequestDto } from "../../domain/ports/driver/tweet.dto";
-import { CreateTweetModule } from "../../domain/modules/createTweet.module";
+import { ICreateTweetRequestDto } from "../../core/ports/driver/tweet.dto";
+import { CreateTweetModule } from "../../app/modules/createTweet.module";
 
 
 

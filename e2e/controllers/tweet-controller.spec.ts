@@ -2,7 +2,7 @@ import { Application } from "express";
 import { Server } from "http";
 import { createApplication, startServer } from "../../src/infra/www/bootstrap";
 import { agent } from 'supertest'
-import { ICreateTweetRequestDto, LikeTweetRequestDto } from "../../src/domain/ports/driver/tweet.dto";
+import { ICreateTweetRequestDto, LikeTweetRequestDto } from "../../src/core/ports/driver/tweet.dto";
 
 
 xdescribe('Tweet Controller e2e', ()=> {

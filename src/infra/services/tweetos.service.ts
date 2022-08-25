@@ -1,5 +1,5 @@
-import { CreateTweetosTask } from "../../domain/ports/driver/api";
-import { CreateTweetosRequestDto, ICreateTweetosRequestDto, TweetosDto } from "../../domain/ports/driver/tweetos.dtos";
+import { CreateTweetosTask } from "../../core/ports/driver/api";
+import { CreateTweetosRequestDto, ICreateTweetosRequestDto, TweetosDto } from "../../core/ports/driver/tweetos.dtos";
 
 
 

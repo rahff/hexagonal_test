@@ -1,7 +1,7 @@
 import { mongoUrl } from "../../infra/database/data";
 import { DBMongo } from "../../../src/infra/database";
-import { GetTweetList } from "../../../src/domain/features/get-tweet-list.feature";
-import { GetTweetListModule } from "../../../src/domain/modules/getTweetList.module";
+import { GetTweetList } from "../../../src/core/features/get-tweet-list.feature";
+import { GetTweetListModule } from "../../../src/app/modules/getTweetList.module";
 
 
 describe('GetTweetList', ()=> {

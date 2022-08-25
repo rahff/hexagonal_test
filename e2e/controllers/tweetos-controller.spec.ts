@@ -1,6 +1,6 @@
 import { Application } from "express";
 import { Server } from "http";
-import { ICreateTweetosRequestDto } from "../../src/domain/ports/driver/tweetos.dtos";
+import { ICreateTweetosRequestDto } from "../../src/core/ports/driver/tweetos.dtos";
 import { agent } from "supertest";
 import { createApplication, startServer } from "../../src/infra/www/bootstrap";
 import { createTweetosRequest } from "../../spec/stubs";

@@ -1,4 +1,4 @@
-import { GetTweetList } from "../features/get-tweet-list.feature";
+import { GetTweetList } from "../../core/features/get-tweet-list.feature";
 import { GetTweetListDaoAdapter } from "../../infra/adapters/dao/get-tweet-list-dao-adapter";
 import { tweetMongoRepository } from "../../infra/adapters/repositories/tweet-repository";
 

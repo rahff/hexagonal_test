@@ -1,5 +1,5 @@
-import { Comment } from "../../../src/domain/models/comment"
-import { Tweetos } from "../../../src/domain/models/tweetos"
+import { Comment } from "../../../src/core/models/comment"
+import { Tweetos } from "../../../src/core/models/tweetos"
 
 describe('Comment', ()=>{
     

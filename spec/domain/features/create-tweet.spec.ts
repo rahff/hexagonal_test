@@ -1,7 +1,7 @@
 import { DBMongo } from "../../../src/infra/database";
-import { CreateTweet } from "../../../src/domain/features/create-tweet.feature";
+import { CreateTweet } from "../../../src/core/features/create-tweet.feature";
 import { mongoUrl, tweetosIdRef } from "../../infra/database/data";
-import { CreateTweetModule } from "../../../src/domain/modules/createTweet.module";
+import { CreateTweetModule } from "../../../src/app/modules/createTweet.module";
 import { TweetRepository } from "../../../src/infra/adapters/repositories/tweet-repository";
 
 

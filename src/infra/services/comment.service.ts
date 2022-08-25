@@ -1,5 +1,5 @@
-import { CommentTweetRequestDto, ICommentTweetDto } from "../../domain/ports/driver/comment.dto";
-import { CommentTweetTask } from "src/domain/ports/driver/api";
+import { CommentTweetRequestDto, ICommentTweetDto } from "../../core/ports/driver/comment.dto";
+import { CommentTweetTask } from "src/core/ports/driver/api";
 
 
 export const commentTweetService = async (feature: CommentTweetTask, body: ICommentTweetDto) => {

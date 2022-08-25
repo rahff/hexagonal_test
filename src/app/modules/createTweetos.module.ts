@@ -1,5 +1,5 @@
-import { amqpInstance } from "../../infra/rmq/amqp";
-import { CreateTweetos } from "../features/create-tweetos.feature";
+import { amqp } from "../../infra/rmq/amqp";
+import { CreateTweetos } from "../../core/features/create-tweetos.feature";
 import { CreateTweetosProducerEventAdapter, CreateTweetosProducerEventAdapterStub } from "../../infra/adapters/amqp/create-tweetos-event-handler";
 import { CreatTweetosDaoAdapter } from "../../infra/adapters/dao/create-tweetos-dao-adapter";
 import { tweetosMongoRepository } from "../../infra/adapters/repositories/tweetos-repository";
@@ -7,7 +7,7 @@ import { tweetosMongoRepository } from "../../infra/adapters/repositories/tweeto
 export class CreateTweetosModule {
 
     static get(): CreateTweetos {
-        const amqpInterface = amqpInstance.getChannels();
+        const amqpInterface = amqp.getChannels();
         const amqpAdapter = new CreateTweetosProducerEventAdapter(amqpInterface);
         const creteTweetosMongoDao = new CreatTweetosDaoAdapter(tweetosMongoRepository);
         return new CreateTweetos(creteTweetosMongoDao, amqpAdapter);

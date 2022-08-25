@@ -1,6 +1,6 @@
 import { Application } from "express";
 import { MongoConnection } from "../database";
-import { amqpInstance } from "../rmq/amqp";
+import { amqp } from "../rmq/amqp";
 import { createApplication, startServer } from "./bootstrap";
 
 
@@ -8,9 +8,10 @@ import { createApplication, startServer } from "./bootstrap";
 
 const app: Application = createApplication();
 
+
 MongoConnection.start()
 .then(()=> {
-    amqpInstance.init().then(()=>{
+    amqp.init().then(()=>{
         startServer(3000, app);
     })
 })

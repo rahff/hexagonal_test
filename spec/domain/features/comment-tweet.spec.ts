@@ -1,8 +1,8 @@
-import { CommentTweet } from "../../../src/domain/features/comment-tweet.feature";
-import { CommentTweetRequestDto } from "../../../src/domain/ports/driver/comment.dto";
+import { CommentTweet } from "../../../src/core/features/comment-tweet.feature";
+import { CommentTweetRequestDto } from "../../../src/core/ports/driver/comment.dto";
 import { DBMongo } from "../../../src/infra/database";
 import { mongoUrl, tweetIdRef, tweetosIdRef } from "../../infra/database/data";
-import { CommentTweetModule } from "../../../src/domain/modules/commentTweet.module";
+import { CommentTweetModule } from "../../../src/app/modules/commentTweet.module";
 import { CommentRepository } from "../../../src/infra/adapters/repositories/comment-repository";
 
 

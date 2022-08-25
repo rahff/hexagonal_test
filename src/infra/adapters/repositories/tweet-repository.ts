@@ -1,5 +1,5 @@
 import { Filter, WithId, ObjectId, OptionalId, InsertOneResult, UpdateFilter, UpdateResult, DeleteResult, FindOptions, Document, FindCursor } from "mongodb";
-import { TweetDto } from "../../../domain/ports/driver/tweet.dto";
+import { TweetDto } from "../../../core/ports/driver/tweet.dto";
 import { MongoConnection, MongoInterface } from "../../database";
 import { AbstractMongoRepository } from "./abstract-repository";
 
