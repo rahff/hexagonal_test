@@ -1,6 +1,6 @@
-import { LikeTweetTask } from "../ports/driver/api";
-import { LikeTweetRequestDto, TweetDto } from "../ports/driver/tweet.dto";
-import { LikeTweetDao } from "../ports/driven/like-tweet-dao";
+import { LikeTweetTask } from "../../ports/driver/api";
+import { LikeTweetRequestDto, TweetDto } from "../../ports/driver/tweet.dto";
+import { LikeTweetDao } from "../../ports/driven/like-tweet-dao";
 
 
 

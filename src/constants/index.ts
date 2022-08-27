@@ -1,0 +1,1 @@
+export const jwtSecret = "db4542b6-6938-49b2-ab35-d649a7626c54-b9915949-2d13-4e4b-9648-082c5996bd2b"

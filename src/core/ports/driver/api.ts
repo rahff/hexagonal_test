@@ -7,7 +7,7 @@ export interface CreateTweetTask {
 }
 
 export interface CreateTweetosTask {
-    execute(data: CreateTweetosRequestDto): Promise<TweetosDto>;
+    execute(data: CreateTweetosRequestDto): Promise<{tweetos: TweetosDto, token: string}>;
 }
 
 export interface CommentTweetTask {

@@ -58,5 +58,5 @@ export class AmqpModule {
     }
 }
 
-export const amqp: AMQP = AmqpModule.register({amqpUrl: ""});
+export const amqp: AMQP = AmqpModule.register({amqpUrl: "amqp://localhost:5672"});
 

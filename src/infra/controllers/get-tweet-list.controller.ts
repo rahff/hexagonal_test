@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { GetTweetListModule } from "../../app/modules/getTweetList.module";
+import { GetTweetListModule } from "../../core/app/modules/getTweetList.module";
 
 export const getTweetListController = async (req: Request, res: Response) => {
     try {

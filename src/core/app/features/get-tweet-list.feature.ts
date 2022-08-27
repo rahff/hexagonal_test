@@ -1,6 +1,6 @@
-import { GetTweetListDao } from "../ports/driven/get-twwet-list-dao";
-import { GetTweetListQuery } from "../ports/driver/api";
-import { TweetDto } from "../ports/driver/tweet.dto";
+import { GetTweetListDao } from "../../ports/driven/get-twwet-list-dao";
+import { GetTweetListQuery } from "../../ports/driver/api";
+import { TweetDto } from "../../ports/driver/tweet.dto";
 
 
 

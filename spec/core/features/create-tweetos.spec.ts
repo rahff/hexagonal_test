@@ -1,16 +1,16 @@
 import { createTweetosRequest } from "../../stubs/index"
-import { CreateTweetos } from "../../../src/core/features/create-tweetos.feature";
+import { CreateTweetos } from "../../../src/core/app/features/create-tweetos.feature";
 import { CreateTweetosRequestDto } from "../../../src/core/ports/driver/tweetos.dtos";
 import { DBMongo } from "../../../src/infra/database";
 import { mongoUrl } from "../../infra/database/data";
-import { generateRandom } from "../../../src/app/utils";
-import { CreateTweetosModule } from "../../../src/app/modules/createTweetos.module";
-import { AMQP } from "../../../src/infra/rmq/amqp";
+import { generateRandom, generateRandomString } from "../../../src/core/app/utils";
+import { CreateTweetosModule } from "../../../src/core/app/modules/createTweetos.module";
 import { TweetosRepository } from "../../../src/infra/adapters/repositories/tweetos-repository";
+import { CoreAuthService } from "../../../src/core/services/auth.service";
 
 
 
-describe('CreateTweetosRequest', async ()=>{
+describe('CreateTweetosRequest', ()=>{
 
    const db = new DBMongo(mongoUrl, "tweet");
    beforeAll(async ()=> {
@@ -20,16 +20,17 @@ describe('CreateTweetosRequest', async ()=>{
 
     let createTweetosFeature: CreateTweetos;
     let tweetosRepository: TweetosRepository
-    let createTweetosRequestDto: CreateTweetosRequestDto = new CreateTweetosRequestDto({...createTweetosRequest, email: "michmichtest"+generateRandom()+"@gmail.com"});
+    let createTweetosRequestDto: CreateTweetosRequestDto = new CreateTweetosRequestDto({...createTweetosRequest, email: generateRandomString(5)+generateRandom()+"@gmail.com"});
     tweetosRepository = new TweetosRepository(db.getTweetosCollection());
      beforeEach(()=>{
         createTweetosFeature = CreateTweetosModule.forTesting();
      });
 
      it('should create a new tweetos', async ()=> {
-        const tweetos = await createTweetosFeature.execute(createTweetosRequestDto);
-        const expectedTweetos = await tweetosRepository.findOne({_id: tweetos._id})
-        expect(expectedTweetos?.username).toEqual(tweetos.username);
+        const response = await createTweetosFeature.execute(createTweetosRequestDto);
+        const expectedTweetos = await tweetosRepository.findOne({_id: response.tweetos._id})
+        expect(expectedTweetos?.username).toEqual(response.tweetos.username);
+        expect(response.token).toEqual(CoreAuthService.makeTokenForGivenTweetos(response.tweetos))
      })
 
      it('should throw an error if the tweetos s email already exist', async ()=> {

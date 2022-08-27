@@ -1,6 +1,6 @@
-import { LikeTweetDaoAdapter } from "../../infra/adapters/dao/like-tweet-dao-adapter";
-import { LikeTweet } from "../../core/features/like-tweet.feature";
-import { tweetMongoRepository } from "../../infra/adapters/repositories/tweet-repository";
+import { LikeTweetDaoAdapter } from "../../../infra/adapters/dao/like-tweet-dao-adapter";
+import { LikeTweet } from "../features/like-tweet.feature";
+import { tweetMongoRepository } from "../../../infra/adapters/repositories/tweet-repository";
 
 export class LikeTweetModule {
 

@@ -1,13 +1,13 @@
 import { DBMongo } from "../../../src/infra/database";
-import { CreateTweet } from "../../../src/core/features/create-tweet.feature";
+import { CreateTweet } from "../../../src/core/app/features/create-tweet.feature";
 import { mongoUrl, tweetosIdRef } from "../../infra/database/data";
-import { CreateTweetModule } from "../../../src/app/modules/createTweet.module";
+import { CreateTweetModule } from "../../../src/core/app/modules/createTweet.module";
 import { TweetRepository } from "../../../src/infra/adapters/repositories/tweet-repository";
 
 
 
 
-describe('CreateTweetRequest', async()=>{
+describe('CreateTweetRequest', ()=> {
 
    const db = new DBMongo(mongoUrl, "tweet");
    beforeAll(async ()=> {

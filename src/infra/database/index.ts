@@ -34,7 +34,6 @@ export class DBMongo {
 
     async start(): Promise<void> {
        await this.mongoClient.connect();
-       console.log("client connected");
     }
 
     public initDB(): void {
@@ -67,7 +66,7 @@ export class DBMongo {
             deleteOne: this.TweetosCollection.deleteOne.bind(this.TweetosCollection),
             deleteMany: this.TweetosCollection.deleteMany.bind(this.TweetosCollection),
             find: this.TweetosCollection.find.bind(this.TweetosCollection)
-         };
+        };
     }
 
     public getCommentCollection(): MongoInterface<CommentDto> {
@@ -78,9 +77,8 @@ export class DBMongo {
             deleteOne: this.CommentCollection.deleteOne.bind(this.CommentCollection),
             deleteMany: this.CommentCollection.deleteMany.bind(this.CommentCollection),
             find: this.CommentCollection.find.bind(this.CommentCollection)
-         };
+        };
     }
-
 
     async destroy(): Promise<void> {
       await this.mongoClient.close();

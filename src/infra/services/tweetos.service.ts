@@ -3,7 +3,7 @@ import { CreateTweetosRequestDto, ICreateTweetosRequestDto, TweetosDto } from ".
 
 
 
-export const createTweetosService = async (createTweetosTask: CreateTweetosTask, requestBody: ICreateTweetosRequestDto): Promise<TweetosDto> => {
+export const createTweetosService = async (createTweetosTask: CreateTweetosTask, requestBody: ICreateTweetosRequestDto): Promise<{tweetos: TweetosDto, token: string}> => {
     try{          
         const createTweetosRequestDto = new CreateTweetosRequestDto(requestBody);
         const response = await createTweetosTask.execute(createTweetosRequestDto);

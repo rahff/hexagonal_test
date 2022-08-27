@@ -1,5 +1,5 @@
 import { Filter, WithId, OptionalId, InsertOneResult, UpdateFilter, UpdateResult, DeleteResult, FindOptions, Document, FindCursor, ObjectId } from "mongodb";
-import { generateId } from "../../../app/utils";
+import { generateId } from "../../../core/app/utils";
 import { TweetosDto } from "../../../core/ports/driver/tweetos.dtos";
 import { MongoInterface } from "../../database";
 import { TweetosInMemoryDB } from "../../database/inMemory.data";

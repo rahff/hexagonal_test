@@ -1,4 +1,4 @@
-import { generateId } from "../../../src/app/utils";
+import { generateId } from "../../../src/core/app/utils";
 import { Tweet } from "../../../src/core/models/tweet";
 import { Tweetos } from "../../../src/core/models/tweetos";
 

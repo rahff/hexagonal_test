@@ -1,7 +1,7 @@
 import { Filter, WithId, ObjectId, OptionalId, InsertOneResult, UpdateFilter, UpdateResult, DeleteResult, FindOptions, Document, FindCursor } from "mongodb";
 import { CommentDto } from "../../../core/ports/driver/comment.dto";
 import { MongoInterface } from "../../database";
-import { generateId } from "../../../app/utils";
+import { generateId } from "../../../core/app/utils";
 
 export class CommentInMemory implements MongoInterface<CommentDto> {
 

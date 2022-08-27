@@ -1,7 +1,7 @@
-import { CreateTweetDaoAdapter } from "../../infra/adapters/dao/create-tweet-dao-adapter";
-import { CreateTweet } from "../../core/features/create-tweet.feature";
-import { tweetMongoRepository } from "../../infra/adapters/repositories/tweet-repository";
-import { tweetosMongoRepository } from "../../infra/adapters/repositories/tweetos-repository";
+import { CreateTweetDaoAdapter } from "../../../infra/adapters/dao/create-tweet-dao-adapter";
+import { CreateTweet } from "../features/create-tweet.feature";
+import { tweetMongoRepository } from "../../../infra/adapters/repositories/tweet-repository";
+import { tweetosMongoRepository } from "../../../infra/adapters/repositories/tweetos-repository";
 
 
 export class CreateTweetModule {

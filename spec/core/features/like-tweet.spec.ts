@@ -1,12 +1,12 @@
-import { LikeTweetModule } from "../../../src/app/modules/likeTweet.module";
-import { LikeTweet } from "../../../src/core/features/like-tweet.feature";
+import { LikeTweetModule } from "../../../src/core/app/modules/likeTweet.module";
+import { LikeTweet } from "../../../src/core/app/features/like-tweet.feature";
 import { DBMongo } from "../../../src/infra/database";
 import { mongoUrl, tweetIdRef } from "../../infra/database/data";
 import { TweetRepository } from "../../../src/infra/adapters/repositories/tweet-repository";
 
 
 
-describe("Like a Tweet", async ()=> {
+describe("Like a Tweet", ()=> {
     let tweetRepository: TweetRepository;
     const db = new DBMongo(mongoUrl, "tweet");
     let likeTweetFeature: LikeTweet;

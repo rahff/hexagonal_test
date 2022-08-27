@@ -5,7 +5,7 @@ import { FakeTweetos } from "./data";
 
 describe('InMemory repositories', ()=>{
 
-    beforeAll(()=> console.log("\nInMemory repositories\n"));
+    beforeAll(()=> console.log("\nInMemory repositories"));
 
     let tweetInMemory: TweetInMemory = new TweetInMemory(); 
     let tweetosInMemory: TweetosInMemory = new TweetosInMemory();

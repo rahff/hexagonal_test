@@ -1,5 +1,5 @@
 
-import { generateRandom, generateRandomString } from "../../src/app/utils";
+import { generateRandom, generateRandomString } from "../../src/core/app/utils";
 import { CreateTweetosRequestDto, ICreateTweetosRequestDto } from "../../src/core/ports/driver/tweetos.dtos";
 
 

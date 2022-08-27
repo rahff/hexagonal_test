@@ -1,14 +1,13 @@
-import { createTweetService } from "../services/tweet.service";
 import { Request, Response } from "express";
-import { ICreateTweetRequestDto } from "../../core/ports/driver/tweet.dto";
-import { CreateTweetModule } from "../../app/modules/createTweet.module";
+import { createTweetService } from "../services/tweet.service";
+import { CreateTweetModule } from "../../core/app/modules/createTweet.module";
 
 
 
 
 export const createTweetController = async (req: Request, res: Response)=> {
     try {
-        const body: ICreateTweetRequestDto = req.body;
+        const body = req.body;
         const feature = CreateTweetModule.get();
         const response = await createTweetService(feature, body);
         res.status(201).json({ data: response });
