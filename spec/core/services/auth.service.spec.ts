@@ -15,7 +15,7 @@ describe('AuthService', ()=>{
     it('should make a jwt token for a given user', ()=> {
         const token = CoreAuthService.makeTokenForGivenTweetos(FakeTweetos.getTweetosDto())
         const decodedToken: JwtPayload = jwtService.decodeToken(token);
-        expect(decodedToken?._id).toBe(FakeTweetos._id);
+        expect(decodedToken?.sub).toBe(FakeTweetos._id);
         expect(decodedToken?.email).toBe(FakeTweetos.email);
     })
 })

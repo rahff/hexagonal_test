@@ -1,15 +1,15 @@
 import { Request, Response } from "express";
-import { createTweetService } from "../services/tweet.service";
 import { CreateTweetModule } from "../../core/app/modules/createTweet.module";
+import { CreateTweetRequestDto } from "../../core/ports/driver/tweet.dto";
 
 
 
 
 export const createTweetController = async (req: Request, res: Response)=> {
     try {
-        const body = req.body;
-        const feature = CreateTweetModule.get();
-        const response = await createTweetService(feature, body);
+        const feature = CreateTweetModule.get()
+        const createTweetRequestDto = new CreateTweetRequestDto(req.body);
+        const response = await feature.execute(createTweetRequestDto);
         res.status(201).json({ data: response });
     } catch (error: any) {
         res.status(400).json({ error: error.message });

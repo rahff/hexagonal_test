@@ -30,8 +30,8 @@ describe('AuthMiddleware', ()=> {
 
     it('should check token validity on valid tweetos', async ()=>{
         const validTweetos = await tweetosRepository.findOne({_id: tweetosIdRef});
-        const invalidToken = CoreAuthService.makeTokenForGivenTweetos(validTweetos as TweetosDto);
-        const isValidToken = await tokenChecker.isValidToken(invalidToken);
+        const validToken = CoreAuthService.makeTokenForGivenTweetos(validTweetos as TweetosDto);
+        const isValidToken = await tokenChecker.isValidToken(validToken);
         expect(isValidToken).toBeTrue();
     })
 

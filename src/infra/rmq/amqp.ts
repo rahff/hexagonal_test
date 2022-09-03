@@ -30,9 +30,10 @@ export class AMQP {
     }
 
     public getChannels(): AmqpInterface {
-        if(!this.createTweetosChannel) throw new Error("createTweetosChannel are not initialized");
+        console.log("channel :", this.createTweetosChannel);
+        
         return {
-            createTweetosChannel: {producer: this.createTweetosChannel, queue: "tweetos_created"}
+            createTweetosChannel: {producer: this.createTweetosChannel as Channel, queue: "tweetos_created"}
         }
     }
 

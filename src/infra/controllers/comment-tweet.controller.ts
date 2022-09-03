@@ -1,14 +1,14 @@
 import { Request, Response } from "express";
-import { commentTweetService } from "../services/comment.service";
 import { CommentTweetModule } from "../../core/app/modules/commentTweet.module";
+import { CommentTweetRequestDto } from "../../core/ports/driver/comment.dto";
 
 
 
 export const commentTweetController = async (req: Request, res: Response)=> {
     try {
-        const body = req.body;
         const feature = CommentTweetModule.get();
-        const response = await commentTweetService(feature, body)
+        const commentTweetRequest = new CommentTweetRequestDto(req.body);
+        const response = await feature.execute(commentTweetRequest);
         res.status(201).json({ data: response });
     } catch (error: any) {
         res.status(400).json({ error: error.message })

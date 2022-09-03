@@ -6,7 +6,7 @@ import { jwtSecret } from "../../constants";
 export class CoreAuthService {
 
     static makeTokenForGivenTweetos(tweetos: TweetosDto): any {
-        const {_id, email } = tweetos;
-        return sign({_id, email }, jwtSecret);
+        const { email, _id } = tweetos;
+        return sign({sub: _id, email }, jwtSecret);
     }
 }
